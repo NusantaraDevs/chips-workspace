@@ -1,0 +1,34 @@
+From 9c34ac1bf04d687c684aee4ce4ba3640e0ca9a23 Mon Sep 17 00:00:00 2001
+From: Najahiiii <najahiii@outlook.co.id>
+Date: Thu, 29 Aug 2019 13:28:47 +0000
+Subject: [PATCH] clang: force add blank string to llvm and clang revision
+
+Signed-off-by: Najahiiii <najahiii@outlook.co.id>
+---
+ clang/lib/Basic/Version.cpp | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/clang/lib/Basic/Version.cpp b/clang/lib/Basic/Version.cpp
+index d6564582e77..115314ae0f4 100644
+--- a/clang/lib/Basic/Version.cpp
++++ b/clang/lib/Basic/Version.cpp
+@@ -72,16 +72,12 @@ std::string getLLVMRepositoryPath() {
+ 
+ std::string getClangRevision() {
+ #ifdef CLANG_REVISION
+-  return CLANG_REVISION;
+-#else
+   return "";
+ #endif
+ }
+ 
+ std::string getLLVMRevision() {
+ #ifdef LLVM_REVISION
+-  return LLVM_REVISION;
+-#else
+   return "";
+ #endif
+ }
+-- 
+2.20.1
+
